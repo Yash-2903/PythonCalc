@@ -11,6 +11,10 @@ class MyUnitTest(unittest.TestCase):
         calc = Calc()
         self.assertEqual(calc.add(2, 2), 4)
 
+    def test_sub_method_Calc(self):
+        calc = Calc()
+        self.assertEqual(calc.sub(2, 2), 0)
+
 
 if __name__ == '__main__':
     unittest.main()

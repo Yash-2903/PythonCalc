@@ -2,6 +2,10 @@ def addition(a, b):
     return a + b
 
 
+def subtraction(a, b):
+    return a - b
+
+
 class Calc:
     result = 0
 
@@ -10,4 +14,8 @@ class Calc:
 
     def add(self, a, b):
         self.result = addition(a, b)
+        return self.result
+
+    def sub(self, a, b):
+        self.result = subtraction(a, b)
         return self.result
