@@ -32,6 +32,12 @@ def square(a):
     return c
 
 
+def squareRoot(a):
+    a = int(a)
+    c = a ** (1 / 2)
+    return c
+
+
 class Calc:
     result = 0
 
@@ -56,4 +62,8 @@ class Calc:
 
     def sq(self, a):
         self.result = square(a)
+        return self.result
+
+    def sqrt(self, a):
+        self.result = squareRoot(a)
         return self.result
