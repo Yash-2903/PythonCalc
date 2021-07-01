@@ -19,6 +19,13 @@ def multiplication(a, b):
     return c
 
 
+def division(a, b):
+    a = int(a)
+    b = int(b)
+    c = b / a
+    return c
+
+
 class Calc:
     result = 0
 
@@ -35,4 +42,8 @@ class Calc:
 
     def multiple(self, a, b):
         self.result = multiplication(a, b)
+        return self.result
+
+    def div(self, a, b):
+        self.result = division(a, b)
         return self.result
