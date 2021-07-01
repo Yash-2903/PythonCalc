@@ -13,16 +13,17 @@ class MyUnitTest(unittest.TestCase):
         self.assertIsInstance(self.calc, Calc)
 
     def test_addition(self):
-        test_data = CSVReader("/src/Unit_Test_Addition.csv").data
-        for row in test_data:
+        test_add_data = CSVReader("/src/Unit_Test_Addition.csv").data
+        for row in test_add_data:
             self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calc.result, int(row['Result']))
 
     def test_subtraction(self):
-        test_data = CSVReader("/src/Unit_Test_Addition.csv").data
-        for row in test_data:
-            self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calc.result, int(row['Result']))
+        test_sub_data = CSVReader("/src/Unit_Test_Subtraction.csv").data
+        self.assertEqual(self.calc.sub(5, 10), 5)
+        for row in test_sub_data:
+            self.assertEqual(self.calc.sub(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calc.result_sub, int(row['Result']))
 
 
 if __name__ == '__main__':
