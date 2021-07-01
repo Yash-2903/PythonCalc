@@ -12,9 +12,15 @@ def subtraction(a, b):
     return c
 
 
+def multiplication(a, b):
+    a = int(a)
+    b = int(b)
+    c = a * b
+    return c
+
+
 class Calc:
     result = 0
-    result_sub = 0
 
     def __init__(self):
         pass
@@ -24,5 +30,9 @@ class Calc:
         return self.result
 
     def sub(self, a, b):
-        self.result_sub = subtraction(a, b)
-        return self.result_sub
+        self.result = subtraction(a, b)
+        return self.result
+
+    def multiple(self, a, b):
+        self.result = multiplication(a, b)
+        return self.result
