@@ -18,9 +18,11 @@ class MyUnitTest(unittest.TestCase):
             self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calc.result, int(row['Result']))
 
-    def test_sub_method_Calc(self):
-        calc = Calc()
-        self.assertEqual(calc.sub(2, 2), 0)
+    def test_subtraction(self):
+        test_data = CSVReader("/src/Unit_Test_Addition.csv").data
+        for row in test_data:
+            self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calc.result, int(row['Result']))
 
 
 if __name__ == '__main__':
