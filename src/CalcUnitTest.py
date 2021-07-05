@@ -1,7 +1,7 @@
 import unittest
 from Calc import Calc
 from CSVReader import CSVReader
-from pprint import pprint
+from StaticVariable import StaticVariable
 
 
 class MyUnitTest(unittest.TestCase):
@@ -13,40 +13,44 @@ class MyUnitTest(unittest.TestCase):
         self.assertIsInstance(self.calc, Calc)
 
     def test_addition(self):
-        test_add_data = CSVReader("/src/CSVFiles/Unit_Test_Addition.csv").data
+        test_add_data = CSVReader(StaticVariable.unitTestAddition).data
         for row in test_add_data:
-            self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calc.result, int(row['Result']))
+            self.assertEqual(self.calc.add(row[StaticVariable.value1], row[StaticVariable.value2]),
+                             int(row[StaticVariable.result]))
+            self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
     def test_subtraction(self):
-        test_sub_data = CSVReader("/src/CSVFiles/Unit_Test_Subtraction.csv").data
+        test_sub_data = CSVReader(StaticVariable.unitTestSubtraction).data
         for row in test_sub_data:
-            self.assertEqual(self.calc.sub(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calc.result, int(row['Result']))
+            self.assertEqual(self.calc.sub(row[StaticVariable.value1], row[StaticVariable.value2]),
+                             int(row[StaticVariable.result]))
+            self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
     def test_multiplication(self):
-        test_multiple_data = CSVReader("/src/CSVFiles/Unit_Test_Multiplication.csv").data
+        test_multiple_data = CSVReader(StaticVariable.unitTestMultiplication).data
         for row in test_multiple_data:
-            self.assertEqual(self.calc.multiple(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calc.result, int(row['Result']))
+            self.assertEqual(self.calc.multiple(row[StaticVariable.value1], row[StaticVariable.value2]),
+                             int(row[StaticVariable.result]))
+            self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
     def test_division(self):
-        test_div_data = CSVReader("/src/CSVFiles/Unit_Test_Division.csv").data
+        test_div_data = CSVReader(StaticVariable.unitTestDivision).data
         for row in test_div_data:
-            self.assertAlmostEqual(self.calc.div(row['Value 1'], row['Value 2']), float(row['Result']))
-            self.assertAlmostEqual(self.calc.result, float(row['Result']))
+            self.assertAlmostEqual(self.calc.div(row[StaticVariable.value1], row[StaticVariable.value2]),
+                                   float(row[StaticVariable.result]))
+            self.assertAlmostEqual(self.calc.result, float(row[StaticVariable.result]))
 
     def test_square(self):
-        test_sq_data = CSVReader("/src/CSVFiles/Unit_Test_Square.csv").data
+        test_sq_data = CSVReader(StaticVariable.unitTestSquare).data
         for row in test_sq_data:
-            self.assertAlmostEqual(self.calc.sq(row['Value 1']), float(row['Result']))
-            self.assertAlmostEqual(self.calc.result, float(row['Result']))
+            self.assertAlmostEqual(self.calc.sq(row[StaticVariable.value1]), float(row[StaticVariable.result]))
+            self.assertAlmostEqual(self.calc.result, float(row[StaticVariable.result]))
 
     def test_squareRoot(self):
-        test_sqrt_data = CSVReader("/src/CSVFiles/Unit_Test_SquareRoot.csv").data
+        test_sqrt_data = CSVReader(StaticVariable.unitTestSquareRoot).data
         for row in test_sqrt_data:
-            self.assertAlmostEqual(self.calc.sqrt(row['Value 1']), float(row['Result']))
-            self.assertAlmostEqual(self.calc.result, float(row['Result']))
+            self.assertAlmostEqual(self.calc.sqrt(row[StaticVariable.value1]), float(row[StaticVariable.result]))
+            self.assertAlmostEqual(self.calc.result, float(row[StaticVariable.result]))
 
 
 if __name__ == '__main__':
