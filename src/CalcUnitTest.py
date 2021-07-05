@@ -12,6 +12,7 @@ class MyUnitTest(unittest.TestCase):
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calc, Calc)
 
+    # Unit Test for Addition
     def test_addition(self):
         test_add_data = CSVReader(StaticVariable.unitTestAddition).data
         for row in test_add_data:
@@ -19,6 +20,7 @@ class MyUnitTest(unittest.TestCase):
                              int(row[StaticVariable.result]))
             self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
+    # Unit Test for Subtraction
     def test_subtraction(self):
         test_sub_data = CSVReader(StaticVariable.unitTestSubtraction).data
         for row in test_sub_data:
@@ -26,6 +28,7 @@ class MyUnitTest(unittest.TestCase):
                              int(row[StaticVariable.result]))
             self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
+    # Unit Test for Multiplication
     def test_multiplication(self):
         test_multiple_data = CSVReader(StaticVariable.unitTestMultiplication).data
         for row in test_multiple_data:
@@ -33,6 +36,7 @@ class MyUnitTest(unittest.TestCase):
                              int(row[StaticVariable.result]))
             self.assertEqual(self.calc.result, int(row[StaticVariable.result]))
 
+    # Unit Test for Division
     def test_division(self):
         test_div_data = CSVReader(StaticVariable.unitTestDivision).data
         for row in test_div_data:
@@ -40,12 +44,14 @@ class MyUnitTest(unittest.TestCase):
                                    float(row[StaticVariable.result]))
             self.assertAlmostEqual(self.calc.result, float(row[StaticVariable.result]))
 
+    # Unit Test for Square
     def test_square(self):
         test_sq_data = CSVReader(StaticVariable.unitTestSquare).data
         for row in test_sq_data:
             self.assertAlmostEqual(self.calc.sq(row[StaticVariable.value1]), float(row[StaticVariable.result]))
             self.assertAlmostEqual(self.calc.result, float(row[StaticVariable.result]))
 
+    # Unit Test for SquareRoot
     def test_squareRoot(self):
         test_sqrt_data = CSVReader(StaticVariable.unitTestSquareRoot).data
         for row in test_sqrt_data:

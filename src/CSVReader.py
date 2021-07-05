@@ -2,10 +2,10 @@ import csv
 from pprint import pprint
 
 
-def ClassFactory(class_name, dictionary):
-    return type(class_name, (object,), dictionary)
+# def ClassFactory(class_name, dictionary):
+# return type(class_name, (object,), dictionary)
 
-
+# Read csv file and convert data into list format
 class CSVReader:
     data = []
 

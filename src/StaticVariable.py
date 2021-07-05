@@ -1,3 +1,4 @@
+# Assign Static variable to Static Text
 class StaticVariable:
     unitTestAddition = "src/CSVFiles/Unit_Test_Addition.csv"
     unitTestSubtraction = "/src/CSVFiles/Unit_Test_Subtraction.csv"
