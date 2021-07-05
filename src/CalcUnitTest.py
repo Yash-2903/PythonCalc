@@ -1,7 +1,7 @@
 import unittest
 from Calc import Calc
 from CSVReader import CSVReader
-from StaticVariable import StaticVariable
+from StaticProperties.StaticVariable import StaticVariable
 
 
 class MyUnitTest(unittest.TestCase):

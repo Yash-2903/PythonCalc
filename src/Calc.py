@@ -23,10 +23,13 @@ def squareRoot(a):
 
 
 class Calc:
+    # Initialization
     result = 0
+
 
     def __init__(self):
         pass
+
 
     # Addition
     def add(self, a, b):
